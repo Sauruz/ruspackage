@@ -2,6 +2,21 @@
 
 #NPM packages
 echo "Install NPM packages"
+
+echo '{
+  "name": "ruspackage",
+  "version": "1.0.0",
+  "description": "Standard package with gulp, bower and NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}' > package.json
+
 npm install
 npm install del --save
 npm install gulp --save
@@ -16,8 +31,31 @@ npm install gulp-uglify --save
 npm install merge-stream --save
 npm install run-sequence --save
 
+
 #Bower packages
 echo "Install bower packages"
+
+echo '{
+  "name": "ruspackageBower",
+  "authors": [
+    "Guido <G.rus@de-rus.nl>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "http://www.de-rus.nl",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}' > bower.json
+
 bower install
 bower install jquery --save
 bower install font-awesome --save
