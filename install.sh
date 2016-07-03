@@ -65,7 +65,7 @@ bower install Hover --save
 # bower install datatables.net --save
 # bower install datatables.net-bs --save
 # bower install ckeditor --save
-# bower install sweetalert --save
+# bower install sweetalert2 --save
 # bower install flatpickr-calendar --save
 # bower install hint.css --save
 # bower install magic --save
