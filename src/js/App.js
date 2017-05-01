@@ -1,1 +1,1 @@
-var app = angular.module("bbApp", ['rzModule']); 
+var app = angular.module("App", []);

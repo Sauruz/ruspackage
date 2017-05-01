@@ -67,9 +67,6 @@ gulp.task('compress', function () {
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/angular/angular.min.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-//         'bower_components/datatables.net/js/jquery.dataTables.min.js',
-//         'bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js',
-//         'bower_components/sweetalert/dist/sweetalert-dev.js',
         'src/js/main.js',
         'src/js/**/*'
     ])

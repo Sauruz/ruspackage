@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First page</title>
+    <link href="dist/css/styles.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="App" ng-controller="Ctrl">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Title</label>
+            <input class="form-control" placeholder="Title of artice" ng-model="newArticle.title">
+            <label>Content</label>
+            <textarea rows="8" class="form-control" placeholder="Title of artice" ng-model="newArticle.content"></textarea>
+            <label>Url</label>
+            <input class="form-control" placeholder="Url" ng-model="newArticle.url">
+            <br>
+            <button class="btn btn-success" ng-click="addArticle()">Add article</button>
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>All</h4>
+                    <span ng-class="(countContent('all', newArticle) >= 0) ? 'text-success' : 'text-danger'">{{countContent('all', newArticle)}} characters left</span>
+                    <hr>
+                    <b>{{newArticle.title}}</b><br>
+                    {{newArticle.content}}<br><br>
+                    {{newArticle.url}}<br><br>
+                    {{getHashtags('all', newArticle)}}<br>
+                </div>
+                <div class="col-md-6">
+                    <h4>Twitter</h4>
+                    <span ng-class="(countContent('twitter', newArticle) >= 0) ? 'text-success' : 'text-danger'">{{countContent('twitter', newArticle)}} characters left</span>
+                    <hr>
+                    <b>{{newArticle.title}}</b><br>
+                    {{newArticle.url}}<br>
+                    {{getHashtags('twitter', newArticle)}}<br>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row" ng-repeat="v in articles track by $index">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-danger" ng-click="articles.splice($index, 1)"><i class="fa fa-close"></i></button>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>All</h4>
+                            <span ng-class="(countContent('all', newArticle) >= 0) ? 'text-success' : 'text-danger'">{{countContent('all', newArticle)}} characters left</span>
+                            <hr>
+                            <b>{{v.title}}</b><br>
+                            {{v.content}}<br><br>
+                            {{v.url}}<br><br>
+                            {{getHashtags('all', v)}}<br>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Twitter</h4>
+                            <span ng-class="(countContent('twitter', v) >= 0) ? 'text-success' : 'text-danger'">{{countContent('twitter', v)}} characters left</span>
+                            <hr>
+                            <b>{{v.title}}</b><br>
+                            {{v.url}}<br>
+                            {{getHashtags('twitter', v)}}<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="dist/js/app.js"></script>
+</body>
+</html>
